@@ -30,6 +30,7 @@
     "@testing-library/user-event": "^12.1.10",
     "bootstrap": "4.6.0",
     "classnames": "^2.3.1",
+    "faker": "^5.5.3",
     "moment": "^2.29.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
