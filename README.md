@@ -18,6 +18,7 @@
 - Upon completing the problem, commit to your forked github repo and share the github repo url with us for review
 - Writing inline CSS is discouraged, utilise bootstrap or write your custom CSS in separate CSS files or CSS modules.
 - Create a `.env` by copying `.env.example` which contains your environment variables
+- Use `npm run cm` or `yarn cm` to create commit message
 
 ---
 
