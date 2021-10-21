@@ -15,10 +15,15 @@
     }
   ],
   "cSpell.words": [
+    "browserslist",
+    "Codebuddy",
+    "commitlint",
     "DEVLOG",
+    "fortawesome",
+    "gitmoji",
+    "hookform",
     "Roadmap",
     "Stylelint",
-    "commitlint",
-    "gitmoji"
+    "toastify"
   ]
 }
