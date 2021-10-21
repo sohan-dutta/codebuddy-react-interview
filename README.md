@@ -102,7 +102,7 @@ Sample API response:
 
 Upon submitting the form at the end, redirect the user to `/posts` (i.e., http://localhost:3000/posts)
 
-Here you have to display the list of post which we get from the API using HTTP GET request at `https://codebuddy.review/signup`
+Here you have to display the list of post which we get from the API using HTTP GET request at `https://codebuddy.review/posts`
 
 This API will return a list of posts having the below details
 - `id`: Unique id for each post
