@@ -1,5 +1,6 @@
 import Router from './Router';
-import './styles/index.scss';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import './styles/index.css';
 
 const App = () => <Router />;
 

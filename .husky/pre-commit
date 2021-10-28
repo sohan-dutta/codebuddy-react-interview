@@ -2,5 +2,5 @@
 . "$(dirname "$0")/_/husky.sh"
 
 git add .
-yarn lint --fix
-yarn lint:css
+npm run lint:fix
+npm run lint:css
