@@ -25,6 +25,7 @@
     "indent": 0,
     "max-len": "off",
     "linebreak-style": ["error", "unix"],
+    "no-plusplus": "off",
     "quotes": ["error", "single"],
     "semi": ["error", "always"],
     "object-curly-newline": "off",

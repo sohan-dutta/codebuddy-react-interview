@@ -2,11 +2,21 @@
 import { rest } from 'msw';
 import { isEmpty } from 'lodash';
 import faker from 'faker';
+import { v4 as uuid } from 'uuid';
 
 const API_URL = 'https://codebuddy.review';
 
+const isPrime = (n, i = 2) => {
+  if (n === 0 || n === 1) return false;
+  if (n === i) return true;
+
+  if (n % i === 0) return false;
+
+  return isPrime(n, i + 1);
+};
+
 const handlers = [
-  rest.post(`${API_URL}/signup`, (req, res, ctx) =>
+  rest.post(`${API_URL}/submit`, (req, res, ctx) =>
     res(
       ctx.status(200),
       ctx.json({
@@ -31,6 +41,29 @@ const handlers = [
       ctx.json({
         data: {
           posts,
+        },
+      }),
+    );
+  }),
+
+  rest.get(`${API_URL}/seats`, (req, res, ctx) => {
+    let seatNumber = 1;
+    const seats = Array.from({ length: +req.url.searchParams.get('count') ?? 0 }, (_, i) => ({
+      id: uuid(),
+      seats: Array.from({ length: i + 1 }, (__, j) => ({
+        id: uuid(),
+        row: i,
+        seat: j,
+        isReserved: isPrime(seatNumber),
+        seatNumber: seatNumber++,
+      })),
+    })).reverse();
+
+    return res(
+      ctx.status(200),
+      ctx.json({
+        data: {
+          seats,
         },
       }),
     );

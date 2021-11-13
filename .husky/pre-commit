@@ -3,4 +3,3 @@
 
 git add .
 npm run lint:fix
-npm run lint:css
