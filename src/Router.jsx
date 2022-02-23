@@ -1,19 +1,14 @@
-import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Fallback from './Fallback';
-
-const Home = React.lazy(() => import('./pages/Home'));
-const Posts = React.lazy(() => import('./pages/Posts'));
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from './pages/Home';
+import Posts from './pages/Posts';
 
 const Router = () => (
-  <React.Suspense fallback={<Fallback />}>
-    <BrowserRouter>
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/posts" component={Posts} />
-      </Switch>
-    </BrowserRouter>
-  </React.Suspense>
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/posts" element={<Posts />} />
+    </Routes>
+  </BrowserRouter>
 );
 
 export default Router;

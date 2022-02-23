@@ -1,23 +1,22 @@
-import Jumbotron from 'react-bootstrap/Jumbotron';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
-  const history = useHistory();
+  const navigate = useNavigate();
 
-  const onSubmit = () => history.push('/posts');
+  const onSubmit = () => navigate('/posts');
 
   return (
     <main>
-      <Jumbotron>
+      <div className="bg-light p-5 mb-5">
         <h1>React + Bootstrap v4</h1>
         <p>React template with Bootstrap version v4</p>
         <p>
           <Button variant="primary">Learn more</Button>
         </p>
-      </Jumbotron>
+      </div>
       <Container>
         <Form>
           <Button onClick={onSubmit}>Goto Posts</Button>
