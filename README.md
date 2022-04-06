@@ -32,7 +32,23 @@
 <details>
    <summary>Open it in CodeSandbox</summary>
    
-   Open the repo in CodeSandbox by clicking on: [![Edit recursing-roentgen-6el1q8](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/recursing-roentgen-6el1q8?autoresize=1&fontsize=14&hidenavigation=1&theme=dark)
+   1. Open the repo in CodeSandbox by clicking on: [![Edit recursing-roentgen-6el1q8](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/recursing-roentgen-6el1q8?autoresize=1&fontsize=14&hidenavigation=1&theme=dark)
+   
+   2. Click on the GitHub icon and sign in
+   
+   ![image](https://user-images.githubusercontent.com/86043613/161898147-f96e1430-7856-4bea-a26e-64d1369fa4c3.png)
+   
+   ![image](https://user-images.githubusercontent.com/86043613/161897628-00ab4b27-faa8-441b-841d-7cc3df869a7c.png)
+   
+   3. Once you're done with the problem statement, write **codebuddy-react-interview-3** in the *Repository name...* input field and click on **Create new repository on GitHub**
+   
+   ![image](https://user-images.githubusercontent.com/86043613/161897821-088ccfe5-4154-4d30-8cea-0fd7f2025b83.png)
+   
+   ![image](https://user-images.githubusercontent.com/86043613/161897786-bee7fe0b-dbd0-4aba-bbff-ee22b2975a08.png)
+   
+   4. Share the GitHub repo link with us
+
+
 
 </details>
 
