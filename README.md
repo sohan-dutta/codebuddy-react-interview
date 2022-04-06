@@ -32,7 +32,7 @@
 <details>
    <summary>Open it in CodeSandbox</summary>
    
-   1. Open the repo in CodeSandbox by clicking on: [![Edit recursing-roentgen-6el1q8](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/recursing-roentgen-6el1q8?autoresize=1&fontsize=14&hidenavigation=1&theme=dark)
+   1. Open the repo in CodeSandbox by clicking on: [![Edit codebuddy-react-round-3-boilerplate](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/red-cookies-kgeqd2?fontsize=14&hidenavigation=1&theme=dark)
    
    2. Click on the GitHub icon and sign in
    
