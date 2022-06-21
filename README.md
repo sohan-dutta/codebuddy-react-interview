@@ -27,41 +27,72 @@
 
 ## Installation
 
-> **_Please read the below instructions carefully. Complete all the steps sequentially_**.
+### There are two ways in which you can run this repo.
 
-1. **_FORK_** this repo to your own GitHub account. **_DON'T CLONE THIS REPO_**. Fork button is the top right corner of the page.
-2. Clone it to your local machine.
-3. Open the project folder in VS Code
-4. Install the recommended plugins
-   - [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
-   - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-   - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-5. Install `node_modules` using `npm` or `yarn`.
+<details>
+   <summary>Open it in CodeSandbox</summary>
+   
+   1. Open the repo in CodeSandbox by clicking on: [![Edit codebuddy-react-round-3-boilerplate](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/red-cookies-kgeqd2?fontsize=14&hidenavigation=1&theme=dark)
+   
+   2. Click on the GitHub icon and sign in
+   
+   ![image](https://user-images.githubusercontent.com/86043613/161898147-f96e1430-7856-4bea-a26e-64d1369fa4c3.png)
+   
+   ![image](https://user-images.githubusercontent.com/86043613/161897628-00ab4b27-faa8-441b-841d-7cc3df869a7c.png)
+   
+   3. Once you're done with the problem statement, write **codebuddy-react-interview-3** in the *Repository name...* input field and click on **Create new repository on GitHub**
+   
+   ![image](https://user-images.githubusercontent.com/86043613/161897821-088ccfe5-4154-4d30-8cea-0fd7f2025b83.png)
+   
+   ![image](https://user-images.githubusercontent.com/86043613/161897786-bee7fe0b-dbd0-4aba-bbff-ee22b2975a08.png)
+   
+   4. Share the GitHub repo link with us
+
+
+
+</details>
+
+<details>
+   <summary>Set it up in your local machine by following the below steps</summary>
+
+
+   > **_Please read the below instructions carefully. Complete all the steps sequentially_**.
+
+   1. **_FORK_** this repo to your own GitHub account. **_DON'T CLONE THIS REPO_**. Fork button is the top right corner of the page.
+   2. Clone it to your local machine.
+   3. Open the project folder in VS Code
+   4. Install the recommended plugins
+      - [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
+      - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+      - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+   5. Install `node_modules` using `npm` or `yarn`.
+
+      ```sh
+      npm install
+      ```
+
+      OR
+
+      ```sh
+      yarn install
+      ```
+
+   6. Create a `.env` by copying `.env.example` at the root of the project.
+   7. Run `npm run start` or `yarn start` to run the project.
+   8. Project will start at http://localhost:3000
+
+   > If you are on Windows and getting lot of ESLint errors due end of line characters CRLF please run the below command to fix it.
 
    ```sh
-   npm install
+   npm run lint:fix
    ```
 
-   OR
+   > **NOTE**: If you face issue installing with `npm` trying using `yarn v1.22.*`
 
-   ```sh
-   yarn install
-   ```
+   > If you are unable to push to your repo due to lint errors, please run `npm run lint` or `yarn lint` to check the code quality. If unable to solve the lint errors, commit using `git commit -m "YOUR COMMIT MESSAGE" --no-verify` and share the link with us for review.
 
-6. Create a `.env` by copying `.env.example` at the root of the project.
-7. Run `npm run start` or `yarn start` to run the project.
-8. Project will start at http://localhost:3000
+   ---
 
-> If you are on Windows and getting lot of ESLint errors due end of line characters CRLF please run the below command to fix it.
-
-```sh
-npm run lint:fix
-```
-
-> **NOTE**: If you face issue installing with `npm` trying using `yarn v1.22.*`
-
-> If you are unable to push to your repo due to lint errors, please run `npm run lint` or `yarn lint` to check the code quality. If unable to solve the lint errors, commit using `git commit -m "YOUR COMMIT MESSAGE" --no-verify` and share the link with us for review.
-
----
+</details>
 
 > In case of any queries feel free to contact us
