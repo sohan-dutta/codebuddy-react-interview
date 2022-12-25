@@ -1,3 +1,228 @@
 body {
   font-size: 16px;
+
+
+}
+.headerContainer{
+  display: flex;
+  justify-content: center;
+}
+
+.header{
+
+  position: fixed;
+  display: flex;
+  z-index: 10;
+  width:80%;
+  margin-top: 10px;
+  
+ 
+
+  
+}
+
+.leftSideOfHeader{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin-right: auto;
+  color: rgb(217, 224, 224);
+  
+
+}
+
+.rightSideOfHeader{
+  display: flex;
+  width: 100%;
+  justify-content: end;
+  margin-top: 6px;
+  color: rgb(217, 224, 224);
+  
+}
+.RightheaderLinks{
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+align-items: center;
+width: 50%;
+}
+
+
+.headerLogo{
+  height: 34px;
+
+
+
+}
+
+.LeftheaderLinks{
+margin-top: 6px;
+display: flex;
+width: 100%;
+justify-content:space-around;
+flex-wrap: wrap;
+
+}
+
+
+.midLink{
+}
+
+.home{
+display: flex;
+justify-content: center;
+position: relative;
+
+}
+
+.switch_lang{
+display: flex;
+text-shadow: 2px 2px 4px #000;
+justify-content: space-between;
+margin-top: 3px;
+height: auto;
+}
+
+.searchBox{
+  z-index: 20;
+  position: fixed;
+  top: 34%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.searchSection{
+  
+  box-shadow: 0 2px 4px rgb(0 0 0 / 30%);
+  align-items: center;
+  display: inline-flex;
+justify-content: space-between;
+
+  border-radius: 24px;
+  background-color: #fff;
+  width: 43vw;
+  height: 52px;
+ }
+
+ input{
+
+  background-color: transparent;
+  width:100%;
+  height: 50px;
+  border:0px;
+  outline: none;
+  margin-left: 20px;
+ }
+
+ .inputBox{
+  flex: 1;
+  width: auto;
+  box-sizing: inherit;
+ }
+
+ .IconsInSearch{
+  display: flex;
+  justify-content: end;
+  margin-right: 2%;
+  margin-top: 1%;
+
+
+ }
+
+  
+.homeWallpaperImage{
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+
+}
+
+.signInLogo{
+width: 34px;
+margin-left: 7px;
+
+
+
+}
+
+a, a:link, a:visited  {
+  color: #fff;
+  text-decoration: none;
+
+}
+a:hover{
+  text-decoration:underline;
+}
+
+h7{
+  color: #fff;
+}
+
+span{
+  cursor: pointer;
+}
+
+span:hover{
+  font-weight: 340;
+  color: #fff;
+}
+
+.menu{
+  position: absolute;
+  z-index: 40;
+  top: 8%;
+  right:10%;
+  background-color: #fff;box-shadow: 2px 2px 12px 3px rgb(0 0 0 / 20%);
+
+  border-radius: 6px;
+  text-align: left;
+
+
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+ 
+
+}
+.menu>div{
+  padding: 10px;
+}
+
+.menu>div:hover{
+  background-color: #f5f5f5;
+  border-radius: 6px;
+}
+
+.menu>div>img{
+
+width: 25px;
+margin-right: 16px;
+
+
+}
+
+button{
+  background-color: transparent;
+  border-radius: 0px;
+  border:0px;
+}
+
+.modalIsHere{position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: 28;
+
+
+
+
+background-color:transparent ;
+
+
+
+
+
+
 }
