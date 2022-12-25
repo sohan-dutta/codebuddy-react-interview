@@ -1,14 +1,29 @@
+import HomeWallpaper from '../assets/penguin.jpeg';
+import Crousel from '../Crousel';
+import SearchSection from '../SearchSection';
+
+const Home = () => (
+  <>
+    <div className="home">
+      <img className="homeWallpaperImage" src={HomeWallpaper} alt="homeWallpaper" />
+
+      <SearchSection />
+    </div>
+    <Crousel />
+  </>
+);
+
+export default Home;
+
+/*
+const navigate = useNavigate();
+const onSubmit = () => navigate('/posts');
+
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
-import { useNavigate } from 'react-router-dom';
 
-const Home = () => {
-  const navigate = useNavigate();
-
-  const onSubmit = () => navigate('/posts');
-
-  return (
+return (
     <main>
       <div className="bg-light p-5 mb-5">
         <h1>React + Bootstrap v4</h1>
@@ -27,3 +42,6 @@ const Home = () => {
 };
 
 export default Home;
+
+
+*/
