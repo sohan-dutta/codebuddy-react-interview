@@ -5,7 +5,6 @@ import Logo from './assets/Logo.png';
 import SignInLogo from './assets/SignInLogo.png';
 import rewardsLogo from './assets/rewardIcon.png';
 import hamburgerLogo from './assets/hamburger.png';
-import Modal from './Modal';
 import Menu from './Menu';
 
 function MyHeader() {
