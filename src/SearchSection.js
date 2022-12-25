@@ -12,10 +12,10 @@ const SeachSection = () => (
         </div>
 
         <div className="IconsInSearch">
-          <span>
+          <span className="signInLogoContainer">
             <img className="signInLogo" src={Mic} alt="Mic" />
           </span>
-          <span>
+          <span className="signInLogoContainer">
             <img className="signInLogo" src={Lens} alt="Lens" />
           </span>
           <span>

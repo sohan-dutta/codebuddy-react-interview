@@ -1,4 +1,5 @@
 import HomeWallpaper from '../assets/penguin.jpeg';
+import Crousel from '../Crousel';
 import SearchSection from '../SearchSection';
 
 const Home = () => (
@@ -8,6 +9,7 @@ const Home = () => (
 
       <SearchSection />
     </div>
+    <Crousel />
   </>
 );
 

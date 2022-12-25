@@ -24,14 +24,14 @@ function MyHeader() {
           </div>
           <div className="rightSideOfHeader">
             <div className="RightheaderLinks">
-              <span>
+              <span className="signInLogoSpanContainer">
                 Sign In
                 <span>
                   <img className="signInLogo" src={SignInLogo} alt="Sign In" />
                 </span>
               </span>
 
-              <span>
+              <span className="signInLogoSpanContainer">
                 Rewards
                 <span>
                   <img className="signInLogo" src={rewardsLogo} alt="rewardsLogo" />

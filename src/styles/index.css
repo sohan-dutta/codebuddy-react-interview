@@ -217,3 +217,44 @@ button{
   background-color:transparent ;
 
 }
+
+.crouselContainer{
+  position: absolute;
+  width: 80vw;
+
+  top: 70%;
+  left:10%;
+
+}
+
+
+@media  (max-width: 930px){
+
+  .LeftheaderLinks{
+    display: none;
+  }
+}
+
+
+
+@media  (max-width: 1140px){
+
+  .switch_lang,.signInLogoSpanContainer{
+    display: none;
+  }
+
+}
+
+
+@media  (max-width: 1240px){
+
+.signInLogoSpanContainer{
+    display: none;
+  }}
+
+
+  @media (max-width:500px) {
+    .signInLogoContainer{
+      display: none;
+    }
+  }
