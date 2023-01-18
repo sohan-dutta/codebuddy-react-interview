@@ -1,3 +1,99 @@
 body {
   font-size: 16px;
 }
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  justify-content: space-evenly;
+  margin: 3% auto;
+  background-color: #1d1e22;
+  border-radius: 10px;
+  color: #464159;
+}
+.seat {
+  background-color: #444451;
+  height: 35px;
+  width: 45px;
+  margin: 3px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.seat-label {
+  background-color: #444451;
+  height: 15px;
+  width: 25px;
+  margin: 3px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.selected {
+  background-color: #0081cb;
+}
+
+.reserved {
+  background-color: #673ab7;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.seat-label-line {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #777;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.seat-label-line li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+}
+
+.seat-label-line li small {
+  margin-left: 2px;
+}
+
+.seat-no-css {
+  font-size: 10px;
+  color: burlywood;
+  text-align: center;
+  margin-top: 10px;
+}
+.seat-select {
+  cursor: pointer;
+}
+.form-css {
+  display: flex;
+}
+.screen-here {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  color: white;
+}
+.price {
+  margin-bottom: 30px;
+  color: aliceblue;
+}
+.submit-btn {
+  margin-left: 10px;
+}
