@@ -1,15 +1,8 @@
-const Seats = ({ status, isReserved, onClick, value, seatNo }) => {
-  const onPress = v => {
-    if (!v?.isReserved) {
-      onClick(v);
-    }
-  };
+const Seats = props => {
+  const { status, isReserved, seatNo } = props;
 
   return (
-    <div
-      className={`seat ${status} ${!isReserved && 'seat-select'}`}
-      onClick={() => onPress(value)}
-    >
+    <div {...props} className={`seat ${status} ${!isReserved && 'seat-select'}`}>
       <p className="seat-no-css">{seatNo}</p>
     </div>
   );

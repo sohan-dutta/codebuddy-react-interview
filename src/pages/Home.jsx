@@ -26,7 +26,7 @@ const Home = () => {
           SuccessToast('Seat booked successfully');
         }
       })
-      .catch(error => {
+      .catch(() => {
         ErrorToast('Server Error');
       });
   };
@@ -141,7 +141,7 @@ const Home = () => {
                     ? 'selected'
                     : ''
                 }
-                onClick={v => onSeatClicked(v)}
+                onClick={() => onSeatClicked(item)}
               />
             ))}
           </div>
