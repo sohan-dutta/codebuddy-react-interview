@@ -8,23 +8,5 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.stylelint": true,
     "source.fixAll.eslint": true
-  },
-  "eslint.workingDirectories": [
-    {
-      "mode": "auto"
-    }
-  ],
-  "jest.autoRun": "off",
-  "cSpell.words": [
-    "browserslist",
-    "Codebuddy",
-    "commitlint",
-    "DEVLOG",
-    "fortawesome",
-    "gitmoji",
-    "hookform",
-    "Roadmap",
-    "Stylelint",
-    "toastify"
-  ]
+  }
 }
