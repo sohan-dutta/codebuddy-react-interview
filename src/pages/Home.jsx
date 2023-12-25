@@ -1,17 +1,105 @@
 import { Icon } from "@iconify/react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Home = () => {
   const [stepNo, setStepNo] = useState(1);
+  const [emailId, setEmailId] = useState("");
+  const [password, setPassword] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [address, setAddress] = useState("");
+  const [countryCode, setCountryCode] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [atac, setATAC] = useState(false);
+  const navigate = useNavigate();
 
   const back = () => {
     if (stepNo > 1) setStepNo(stepNo - 1);
   };
 
-  const saveAndNext = () => {
-    console.log("hello");
-    if (stepNo < 3) setStepNo(stepNo + 1);
+  const showErrorList = (errList) => {
+    toast.error(
+      <ul className="errors-list">
+        {errList.map((msg) => (
+          <li key={msg}>{msg}</li>
+        ))}
+      </ul>,
+    );
+  };
+
+  const save = async () => {
+    const errList = [];
+    switch (stepNo) {
+      case 1:
+        if (!/^[A-Z0-9_%+-](.[A-Z0-9_%+-]+)*@[A-Z0-9-]+(.[A-Z]{2,4})?$/i.test(emailId))
+          errList.push("Email is invalid. Kindly provide valid email.");
+        if (
+          !/^(?=.*[A-Z]{2,})(?=.*[a-z]{2,})(?=.*\d{2,})(?=.*[@$!%*#?&]{2,})[A-Za-z\d@$!%*#?&]{8,}$/.test(
+            password,
+          )
+        ) {
+          errList.push(
+            "Password should contain atleast 8 characters. It should also contain atleast 2 capital letters, 2 small letters, 2 digits, 2 special characters.",
+          );
+        }
+        if (errList.length) showErrorList(errList);
+        else toast.success("Data saved!");
+        return !errList.length;
+      case 2:
+        if (!/^[a-zA-Z]{2,50}$/.test(firstName)) {
+          errList.push(
+            "First Name cannot be empty and can only have alphabets; minimum 2 and maximum 50.",
+          );
+        }
+        if (lastName && !/^[a-zA-Z]+$/.test(lastName))
+          errList.push("Last Name can only have alphabets.");
+        if (!/^.{10,}$/.test(address))
+          errList.push("Address is required, and it should contain minimum 10 characters.");
+        if (errList.length) showErrorList(errList);
+        else toast.success("Data saved!");
+        return !errList.length;
+      case 3:
+        if (!countryCode) {
+          errList.push("Please select a country code.");
+        }
+        if (!/^\d{10}$/.test(phoneNumber))
+          errList.push("Phone Number should have exactly 10 digits.");
+        if (!atac) errList.push("Please accept the terms and conditions.");
+        if (errList.length) showErrorList(errList);
+        else {
+          toast.success("Details sent successfully.");
+          const resp = await fetch("https://codebuddy.review/submit", {
+            method: "POST",
+            body: JSON.stringify({
+              emailId,
+              password,
+              firstName,
+              lastName,
+              address,
+              countryCode,
+              phoneNumber,
+            }),
+          });
+          resp.json().then(
+            (data) => {
+              console.log(data);
+              navigate("/posts");
+            },
+            (err) => {
+              console.err("POST API SEND ERROR:", err);
+            },
+          );
+        }
+    }
+  };
+
+  const saveAndNext = async () => {
+    if (stepNo < 3) {
+      if (save()) setStepNo(stepNo + 1);
+    }
   };
 
   return (
@@ -30,21 +118,23 @@ const Home = () => {
               return (
                 <>
                   <div className="mb-4">
-                    <label className="mb-2 block text-sm font-bold text-gray-700">Username</label>
+                    <label className="mb-2 block text-sm font-bold text-gray-700">Email</label>
                     <input
                       className="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none"
-                      id="username"
                       type="text"
-                      placeholder="Username"
+                      placeholder="Email ID"
+                      value={emailId}
+                      onChange={(e) => setEmailId(e.target.value)}
                     />
                   </div>
                   <div className="mb-6">
                     <label className="mb-2 block text-sm font-bold text-gray-700">Password</label>
                     <input
                       className="focus:shadow-outline mb-3 w-full appearance-none rounded border border-red-500 px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none"
-                      id="password"
-                      type="password"
+                      type="Password"
                       placeholder="******************"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
                     />
                   </div>
                 </>
@@ -56,27 +146,30 @@ const Home = () => {
                     <label className="mb-2 block text-sm font-bold text-gray-700">First Name</label>
                     <input
                       className="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none"
-                      id="username"
                       type="text"
-                      placeholder="Username"
+                      placeholder="First Name"
+                      value={firstName}
+                      onChange={(e) => setFirstName(e.target.value)}
                     />
                   </div>
                   <div className="mb-4">
                     <label className="mb-2 block text-sm font-bold text-gray-700">Last Name</label>
                     <input
                       className="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none"
-                      id="username"
                       type="text"
-                      placeholder="Username"
+                      placeholder="Last Name"
+                      value={lastName}
+                      onChange={(e) => setLastName(e.target.value)}
                     />
                   </div>
                   <div className="mb-4">
                     <label className="mb-2 block text-sm font-bold text-gray-700">Address</label>
                     <input
                       className="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none"
-                      id="username"
                       type="text"
-                      placeholder="Username"
+                      placeholder="Address"
+                      value={address}
+                      onChange={(e) => setAddress(e.target.value)}
                     />
                   </div>
                 </>
@@ -88,12 +181,15 @@ const Home = () => {
                     <label className="mb-2 block text-sm font-bold text-gray-700">
                       Country Code
                     </label>
-                    <input
-                      className="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none"
-                      id="username"
-                      type="text"
-                      placeholder="Username"
-                    />
+                    <select
+                      value={countryCode}
+                      onChange={(e) => setCountryCode(e.target.value)}
+                      className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                    >
+                      <option value="">Select...</option>
+                      <option value="+1">United States (+1)</option>
+                      <option value="+91">India (+91)</option>
+                    </select>
                   </div>
                   <div className="mb-4">
                     <label className="mb-2 block text-sm font-bold text-gray-700">
@@ -101,21 +197,22 @@ const Home = () => {
                     </label>
                     <input
                       className="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none"
-                      id="username"
                       type="text"
-                      placeholder="Username"
+                      placeholder="Phone Number"
+                      value={phoneNumber}
+                      onChange={(e) => setPhoneNumber(e.target.value)}
                     />
                   </div>
-                  <div className="mb-4">
-                    <label className="mb-2 block text-sm font-bold text-gray-700">
+                  <div className="mb-4 flex items-center">
+                    <input
+                      type="checkbox"
+                      className="mr-2 h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
+                      value={atac}
+                      onChange={(e) => setATAC(e.target.value)}
+                    />
+                    <label className="block text-sm font-bold text-gray-700">
                       Accept Terms and Conditions
                     </label>
-                    <input
-                      className="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none"
-                      id="username"
-                      type="text"
-                      placeholder="Username"
-                    />
                   </div>
                 </>
               );
@@ -123,28 +220,38 @@ const Home = () => {
               return <></>;
           }
         })()}
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-end">
           <button
-            className="focus:shadow-outline rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700 focus:outline-none"
+            className={
+              "focus:shadow-outline bg-white-500 rounded px-4 py-2 font-bold text-blue-700 focus:outline-none" +
+              (stepNo == 1 ? " btn-disabled" : "")
+            }
             type="button"
             onClick={() => back()}
           >
             Back
           </button>
           <button
-            className="focus:shadow-outline rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700 focus:outline-none"
+            className="focus:shadow-outline ml-1 mr-1 rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700 focus:outline-none"
+            type="button"
+            onClick={() => save()}
+          >
+            Save
+          </button>
+          <button
+            className={
+              "focus:shadow-outline bg-white-500 rounded px-4 py-2 font-bold text-blue-500 hover:bg-blue-700 hover:text-white focus:outline-none" +
+              (stepNo == 3 ? " btn-disabled" : "")
+            }
             type="button"
             onClick={() => saveAndNext()}
           >
-            Next
+            Save and Next
           </button>
         </div>
       </form>
 
-      <Link to="/posts" className="flex items-center text-blue-600 hover:underline">
-        Posts
-        <Icon icon="mdi:arrow-right" className="ml-2" />
-      </Link>
+      <ToastContainer />
     </div>
   );
 };
