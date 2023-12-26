@@ -1,11 +1,12 @@
 import { Icon } from "@iconify/react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Home = () => {
   const [stepNo, setStepNo] = useState(1);
+  const [maxStepNo, setMaxStepNo] = useState(1);
   const [emailId, setEmailId] = useState("");
   const [password, setPassword] = useState("");
   const [firstName, setFirstName] = useState("");
@@ -16,8 +17,17 @@ const Home = () => {
   const [atac, setATAC] = useState(false);
   const navigate = useNavigate();
 
+  useEffect(() => {
+    if (maxStepNo < stepNo) setMaxStepNo(stepNo);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [stepNo]);
+
   const back = () => {
     if (stepNo > 1) setStepNo(stepNo - 1);
+  };
+
+  const showTab = (num) => {
+    if (num <= maxStepNo) setStepNo(num);
   };
 
   const showErrorList = (errList) => {
@@ -112,6 +122,26 @@ const Home = () => {
       <h2 className="mb-3 text-2xl">Welcome to the home page!</h2>
 
       <form className="mb-4 rounded bg-white px-8 pb-8 pt-6 shadow-md">
+        <ul className="flex flex-wrap border-b border-gray-200 text-center text-sm font-medium text-gray-500 dark:border-gray-700 dark:text-gray-400">
+          {[1, 2, 3].map((num) => (
+            <li key={num} className="me-2">
+              <a
+                href="#"
+                className={
+                  "inline-block rounded-t-lg p-4" +
+                  (num > maxStepNo
+                    ? " elem-disabled"
+                    : num == stepNo
+                      ? " bg-blue-600 text-white"
+                      : " hover:bg-gray-50 hover:text-gray-600 dark:hover:bg-gray-800 dark:hover:text-gray-300")
+                }
+                onClick={() => showTab(num)}
+              >
+                Step {num}
+              </a>
+            </li>
+          ))}
+        </ul>
         {(() => {
           switch (stepNo) {
             case 1:
@@ -130,7 +160,7 @@ const Home = () => {
                   <div className="mb-6">
                     <label className="mb-2 block text-sm font-bold text-gray-700">Password</label>
                     <input
-                      className="focus:shadow-outline mb-3 w-full appearance-none rounded border border-red-500 px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none"
+                      className="focus:shadow-outline mb-3 w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none"
                       type="Password"
                       placeholder="******************"
                       value={password}
@@ -224,7 +254,7 @@ const Home = () => {
           <button
             className={
               "focus:shadow-outline bg-white-500 rounded px-4 py-2 font-bold text-blue-700 focus:outline-none" +
-              (stepNo == 1 ? " btn-disabled" : "")
+              (stepNo == 1 ? " elem-disabled" : "")
             }
             type="button"
             onClick={() => back()}
@@ -241,7 +271,7 @@ const Home = () => {
           <button
             className={
               "focus:shadow-outline bg-white-500 rounded px-4 py-2 font-bold text-blue-500 hover:bg-blue-700 hover:text-white focus:outline-none" +
-              (stepNo == 3 ? " btn-disabled" : "")
+              (stepNo == 3 ? " elem-disabled" : "")
             }
             type="button"
             onClick={() => saveAndNext()}

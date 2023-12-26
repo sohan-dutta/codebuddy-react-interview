@@ -4,7 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.btn-disabled {
+.elem-disabled {
     opacity: 0.5;
     cursor: not-allowed;
     pointer-events: none;
