@@ -19,8 +19,7 @@ const Home = () => {
 
   useEffect(() => {
     if (maxStepNo < stepNo) setMaxStepNo(stepNo);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [stepNo]);
+  }, [maxStepNo, stepNo]);
 
   const back = () => {
     if (stepNo > 1) setStepNo(stepNo - 1);
