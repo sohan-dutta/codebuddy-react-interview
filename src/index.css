@@ -3,3 +3,116 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.elem-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.errors-list {
+  list-style-type: none;
+  font-size: 13.5px;
+}
+
+.movie-rownum-container {
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  display: flex;
+  overflow: hidden;
+}
+
+.movie-rownum-container > input {
+  width: 40px;
+}
+
+.movie-rownum-container input[type='number']::-webkit-inner-spin-button,
+.movie-rownum-container input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.movie-rownum-container input:focus {
+  outline: none !important;
+}
+
+.movie-rownum-container button:focus {
+  outline: none !important;
+}
+
+.movie-seats-table {
+  margin-top: 20px;
+  border-radius: 20px;
+  padding: 20px;
+  background-color: white;
+}
+
+.seat-row {
+  display: flex;
+  align-items: center;
+  outline: 1px solid #777;
+}
+
+.seat-row > div:first-of-type {
+  padding: 8px 10px;
+  border-right: 1px solid #777;
+  width: 75px;
+}
+
+.seat-row > div:last-of-type {
+  padding: 8px 0;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.seat-row .seat {
+  width: 18px;
+  height: 18px;
+  outline: 1px solid #222;
+  margin: 0 2.5px;
+  cursor: pointer;
+  line-height: 18px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.seat-row .seat.reserved {
+  background-color: #bbb;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.seat-row .seat.selected {
+  background-color: greenyellow;
+}
+
+.seat-legend {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.seat-legend > div:nth-of-type(even) {
+  border: 1px solid black;
+  height: 14px;
+  width: 14px;
+  margin-right: 7px;
+}
+
+.seat-legend > div:nth-of-type(odd) {
+  margin-right: 25px;
+}
+
+.seat-legend > div:nth-of-type(1) {
+  font-weight: 500;
+  margin-right: 30px;
+}
+
+.seat-legend > div:nth-of-type(2) {
+  background-color: #bbb;
+}
+
+.seat-legend > div:nth-of-type(4) {
+  background-color: greenyellow;
+}
