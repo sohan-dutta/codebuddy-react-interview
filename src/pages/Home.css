@@ -1,0 +1,89 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+.input-container {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"],
+select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+select {
+  height: 40px;
+}
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.all-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  color: #666;
+}
+
+.button-container button.back {
+  background-color: rgba(0, 0, 0, 0.521);
+  color: white;
+}
+
+.button-container button.save-next {
+  background-color: #28a745;
+}
+
+.stepper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.stepper div {
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.stepper div.active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.error {
+  color: red;
+  margin-top: 5px;
+}
+
+.show-hide-btn {
+  position: absolute;
+  top: 56%;
+  font-size: medium;
+  right: 10px;
+  transform: translateY(-50%);
+  background-color: transparent;
+  color: blue;
+  cursor: pointer;
+}
