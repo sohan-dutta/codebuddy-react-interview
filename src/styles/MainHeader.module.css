@@ -1,0 +1,19 @@
+.Header {
+  width: 40%;
+  background: linear-gradient(90deg, #125597, #9ccdff);
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: medium;
+  border-radius: 20px;
+  text-align: center;
+  padding: 2vh 2vw 2vh 2vw;
+  margin: 3vh 0vw 3vh 0vh;
+}
+
+.DivOuter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: red; */
+}

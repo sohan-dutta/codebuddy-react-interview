@@ -1,0 +1,156 @@
+.MainHeaderTitleDiv {
+  /* margin-top: 2vh; */
+  padding: 2vh 0vw;
+  font-weight: bolder;
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: center;
+  /* background-color: red; */
+}
+
+.Stack {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5vh 0vw 5vh 0vw;
+  padding: 2vh 0vw 2vh 0vw;
+}
+
+@media only screen and (min-width: 480px) and (max-width: 599px) {
+  .MainHeaderTitleDiv {
+    /* margin-top: 2vh; */
+    padding: 2vh 0vw;
+    font-weight: bolder;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    /* background-color: red; */
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 479px) {
+  .MainHeaderTitleDiv {
+    /* margin-top: 2vh; */
+    padding: 0vh 1vw;
+    font-weight: bolder;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    /* background-color: yellow; */
+  }
+}
+
+.Paper {
+  /* padding: 2vh 1vw; */
+  /* background: green; */
+}
+
+.ButtonForMobileWidth {
+  /* background-color: green; */
+}
+
+@media only screen and (max-width: 700px) {
+  .Stepper {
+    display: none;
+    /* background-color: yellow; */
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .Stepper {
+    /* background-color: green; */
+  }
+}
+
+@media only screen and (min-width: 1367px) and (max-width: 1940px) {
+  .Paper {
+    margin-top: 7vh;
+    margin-bottom: 8vh;
+    /* padding: 4vh 1vw; */
+    /* background-color: red; */
+    margin: 10vh 5vw;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1366px) {
+  .Paper {
+    margin-top: 3vh;
+    margin-bottom: 8vh;
+    padding: 3vh 0vw;
+    /* padding: 4vh 1vw; */
+    /* background-color: red; */
+  }
+}
+
+@media only screen and (min-width: 580px) and (max-width: 768px) {
+  .Paper {
+    margin-top: 7vh;
+    margin-bottom: 12vh;
+    /* background-color: green; */
+  }
+}
+
+@media only screen and (min-width: 577px) and (max-width: 579px) {
+  .Paper {
+    margin-top: 5vh;
+    margin-bottom: 9vh;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    /* background-color:red; */
+  }
+}
+@media only screen and (min-width: 331px) and (max-width: 576px) {
+  .Paper {
+    margin-top: 5vh;
+    margin-bottom: 11vh;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    /* background-color:gray; */
+  }
+}
+
+@media only screen and (max-width: 330px) {
+  .Paper {
+    margin-top: 5vh;
+    margin-bottom: 11vh;
+    padding-top: 2vh;
+    padding-bottom: 8vh;
+    /* background-color:yellow; */
+  }
+}
+
+@media only screen and (min-width: 540) and (max-width: 599px) {
+  .ButtonForMobileWidth {
+    background-color: red;
+    width: 30vw;
+    font-size: auto;
+  }
+}
+
+@media only screen and (min-width: 541px) and (max-width: 599px) {
+  .ButtonForMobileWidth {
+    /* background-color: green; */
+    width: 30vw;
+    font-size: auto;
+  }
+}
+
+@media only screen and (min-width: 421px) and (max-width: 540px) {
+  .ButtonForMobileWidth {
+    /* background-color: green; */
+    width: 40vw;
+    font-size: auto;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .ButtonForMobileWidth {
+    /* background-color: yellowgreen; */
+    width: 50vw;
+    font-size: auto;
+  }
+}
+
+.ButtonDiv {
+  padding-bottom: 2vh;
+}

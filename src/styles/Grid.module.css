@@ -1,0 +1,69 @@
+.GridContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2vh 0vw;
+  padding-left: 5vw;
+}
+
+.GridContainer1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2vh 0vw 0vw 0vh;
+  padding-left: 5vw;
+  background-color: red;
+}
+
+.GridItemCenter {
+}
+
+.acceptTermsAndConditionButton {
+  /* background-color: red; */
+  margin-top: 4vh;
+  width: 230px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.acceptTermsAndConditionButtonSpan {
+  font-size: 12px;
+  font-weight: bolder;
+}
+
+/* Media Query */
+@media only screen and (max-width: 600px) {
+  .GridItemCenter {
+    display: flex;
+    /* background-color: yellow; */
+    justify-content: center;
+  }
+
+  .GridContainer {
+    margin: 2vh 0vw;
+    padding-left: 0;
+  }
+
+  .GridContainer1 {
+    margin: 2vh 0vw;
+    padding-left: 0;
+  }
+
+  .acceptTermsAndConditionButton {
+    /* background-color: red; */
+    width: 230px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .acceptTermsAndConditionButtonSpan {
+    font-size: 12px;
+    font-weight: bolder;
+  }
+}
+
+.FiledWidth {
+  width: 230px;
+}

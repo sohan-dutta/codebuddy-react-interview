@@ -1,0 +1,35 @@
+@media only screen and (min-width: 540) and (max-width: 599px) {
+  .ButtonForMobileWidth {
+    background-color: red;
+    width: 30vw;
+    font-size: auto;
+  }
+}
+
+@media only screen and (min-width: 541px) and (max-width: 599px) {
+  .ButtonForMobileWidth {
+    /* background-color: green; */
+    width: 30vw;
+    font-size: auto;
+  }
+}
+
+@media only screen and (min-width: 421px) and (max-width: 540px) {
+  .ButtonForMobileWidth {
+    /* background-color: green; */
+    width: 40vw;
+    font-size: auto;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .ButtonForMobileWidth {
+    /* background-color: yellowgreen; */
+    width: 50vw;
+    font-size: auto;
+  }
+}
+
+.ButtonDiv {
+  padding-bottom: 2vh;
+}

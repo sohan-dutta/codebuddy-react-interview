@@ -78,3 +78,11 @@ npm run format
 ---
 
 > In case of any queries feel free to contact us
+
+## Added new depencies
+
+<!-- npm install @mui/material @emotion/react @emotion/styled
+npm install react-hook-form
+npm install @hookform/resolvers yup
+npm install @mui/icons-material
+npm install moment -->

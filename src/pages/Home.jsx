@@ -18,10 +18,17 @@ const Home = () => {
         Perspiciatis similique quaerat reiciendis nam aliquam?
       </p>
 
-      <Link to="/posts" className="flex items-center text-blue-600 hover:underline">
-        Posts
-        <Icon icon="mdi:arrow-right" className="ml-2" />
-      </Link>
+      <div className="flex">
+        <Link to="/stepperForm" className="m-5 flex items-center p-4 text-blue-600 hover:underline">
+          Multi Steppper Form Fill Here
+          <Icon icon="mdi:arrow-right" className="ml-2" />
+        </Link>
+
+        <Link to="/posts" className="flex items-center text-blue-600 hover:underline">
+          Posts
+          <Icon icon="mdi:arrow-right" className="ml-2" />
+        </Link>
+      </div>
     </div>
   );
 };
