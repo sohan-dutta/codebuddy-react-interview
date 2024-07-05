@@ -1,0 +1,35 @@
+button{
+    background-color: #F8C16F !important;
+    color: #4BB7D4 !important;
+    padding: 2px 10px !important;
+    border-radius: 4px;
+    font-size: small !important;
+}
+button:disabled{
+    background-color: #f1e8d9 !important;
+   
+   
+}
+
+input{
+    height: 30px;
+    border: 1px solid white;
+    border-radius: 4px;
+    padding: 2px 5px !important;
+    width: 100%;
+}
+input:focus {
+    border-color: brown;
+    outline-color: brown;
+}
+
+select{
+    height: 30px;
+    border: 1px solid white;
+    border-radius: 4px;
+    padding: 2px 5px !important;
+    width: 100%;
+}
+
+
+

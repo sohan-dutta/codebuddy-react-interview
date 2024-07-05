@@ -12,6 +12,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "formik": "^2.4.6",
     "localforage": "^1.10.0",
     "lodash": "^4.17.21",
     "match-sorter": "^6.3.1",
@@ -19,7 +20,8 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.20.1",
     "sort-by": "^1.2.0",
-    "uuid": "^9.0.1"
+    "uuid": "^9.0.1",
+    "yup": "^1.4.0"
   },
   "devDependencies": {
     "@faker-js/faker": "^8.3.1",

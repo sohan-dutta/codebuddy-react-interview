@@ -1,40 +1,47 @@
 import { Icon } from "@iconify/react";
+import { useState } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import PostCard from "./PostCard";
 
 const Posts = () => {
-  return (
-    <div className="rounded-lg bg-gray-50 p-7 text-gray-900 shadow-lg">
-      <h1 className="mb-7 text-4xl font-bold">Posts</h1>
-      <Link to="/" className="mb-4 flex items-center text-blue-600 hover:underline">
-        <Icon icon="mdi:arrow-left" className="mr-2" />
-        Back to Home
-      </Link>
+  const [list, setList] = useState([])
 
-      <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-        <div className="rounded-lg bg-white p-7 shadow-lg">
-          <h2 className="text-2xl font-bold">Post 1</h2>
-          <p className="text-gray-700">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo voluptatem, quibusdam,
-            quos, voluptatum voluptas quod quas voluptates quia doloribus nobis voluptatibus. Quam,
-            voluptate voluptatum. Quod, voluptate? Quisquam, voluptate voluptatum.
-          </p>
-        </div>
-        <div className="rounded-lg bg-white p-7 shadow-lg">
-          <h2 className="text-2xl font-bold">Post 2</h2>
-          <p className="text-gray-700">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo voluptatem, quibusdam,
-            quos, voluptatum voluptas quod quas voluptates quia doloribus nobis voluptatibus. Quam,
-            voluptate voluptatum. Quod, voluptate? Quisquam, voluptate voluptatum.
-          </p>
-        </div>
-        <div className="rounded-lg bg-white p-7 shadow-lg">
-          <h2 className="text-2xl font-bold">Post 3</h2>
-          <p className="text-gray-700">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo voluptatem, quibusdam,
-            quos, voluptatum voluptas quod quas voluptates quia doloribus nobis voluptatibus. Quam,
-            voluptate voluptatum. Quod, voluptate? Quisquam, voluptate voluptatum.
-          </p>
-        </div>
+
+
+  const getList = async () => {
+    try {
+      const response = await fetch('https://codebuddy.review/posts', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+
+      });
+      const { data } = await response.json();
+      setList(data)
+    } catch (error) {
+      setList([])
+      console.log(error)
+    }
+  }
+
+  useEffect(() => {
+    getList().then(() => { }).catch(() => { })
+  }, [])
+
+
+
+
+  return (
+    <div className="rounded-lg w-[98%] p-7 text-gray-900 shadow-lg">
+
+      <h1 className="mb-7 text-4xl font-bold">Posts</h1>
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1"> 
+        {list?.map(one => (
+
+          <PostCard item={one} key={one.id} />
+        ))}
       </div>
     </div>
   );
