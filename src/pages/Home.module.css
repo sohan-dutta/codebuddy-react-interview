@@ -1,0 +1,26 @@
+.container {
+    max-width: 50% !important;
+    margin: 0 auto;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .buttonGroup {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+  }
+  
+  .paper {
+    padding: 16px;
+    margin-top: 24px;
+    border-radius: 8px;
+  }
+  
+  .stepper {
+    margin-bottom: 24px;
+  }
+  
