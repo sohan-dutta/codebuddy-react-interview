@@ -3,3 +3,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.form-button-disabled:hover {
+    cursor:not-allowed
+}
